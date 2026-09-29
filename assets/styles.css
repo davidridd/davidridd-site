@@ -261,9 +261,11 @@ section.tint + section.tint { border-top: 0; }
 @media (max-width: 720px) { .faq div { grid-template-columns: 1fr; } }
 
 /* ---------- Testimonials ---------- */
-.carousel { display: grid; gap: 2rem; justify-items: center; }
+section.quotes { padding-block: clamp(2.5rem, 5vw, 4rem); }
+.carousel { display: grid; gap: 1.5rem; justify-items: center; }
 .slides { display: grid; width: 100%; }
-.slides .quote { grid-area: 1 / 1; align-content: center; transition: opacity .45s ease; }
+.js .slides { overflow: hidden; transition: height .35s ease; }
+.slides .quote { grid-area: 1 / 1; align-self: start; transition: opacity .45s ease; }
 .js .slides .quote:not(.is-active) { opacity: 0; visibility: hidden; pointer-events: none; }
 .no-js .slides { gap: 3rem; }
 .no-js .slides .quote { grid-area: auto; }
@@ -276,9 +278,9 @@ section.tint + section.tint { border-top: 0; }
 .dots button[aria-selected="true"] { background: var(--accent); transform: scale(1.2); }
 .dots button:hover { background: var(--ink-3); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
-.quote { max-width: 52ch; margin-inline: auto; text-align: center; display: grid; gap: 1.4rem; justify-items: center; }
-.quote .mark { font-size: 4.5rem; line-height: .5; color: var(--accent); font-weight: 700; }
-.quote blockquote { margin: 0; font-size: clamp(1.15rem, 1rem + .7vw, 1.4rem); line-height: 1.55; font-weight: 400; text-wrap: pretty; }
+.quote { max-width: 62ch; margin: 0 auto; text-align: center; display: grid; gap: 1rem; justify-items: center; }
+.quote .mark { font-size: 3.5rem; line-height: .45; color: var(--accent); font-weight: 700; }
+.quote blockquote { margin: 0; font-size: clamp(1.1rem, 1rem + .5vw, 1.3rem); line-height: 1.55; font-weight: 400; text-wrap: pretty; }
 .quote figcaption { font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; }
 .quote figcaption em { font-style: italic; text-transform: none; letter-spacing: 0; font-size: 1rem; color: var(--ink); font-weight: 500; }
 .quote figcaption a { color: var(--ink); text-decoration: none; }

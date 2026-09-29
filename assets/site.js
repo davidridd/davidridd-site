@@ -31,6 +31,7 @@
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-carousel]').forEach(function (root) {
     var slides = Array.prototype.slice.call(root.querySelectorAll('.quote'));
+    var track = root.querySelector('.slides');
     var nav = root.querySelector('.carousel-nav');
     var dots = root.querySelector('.dots');
     var prev = root.querySelector('[data-prev]');
@@ -56,8 +57,15 @@
         s.setAttribute('aria-hidden', j === index ? 'false' : 'true');
       });
       dotButtons.forEach(function (d, j) { d.setAttribute('aria-selected', j === index ? 'true' : 'false'); });
+      fit();
       if (userTouched) stop();
     }
+    /* Size the track to the quote on screen, so short quotes don't sit in the space of the longest one. */
+    function fit() {
+      if (track) track.style.height = slides[index].offsetHeight + 'px';
+    }
+    window.addEventListener('resize', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     function start() {
       if (reduceMotion || slides.length < 2 || userTouched) return;
       stop();
