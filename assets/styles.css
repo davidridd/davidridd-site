@@ -235,7 +235,11 @@ section.tint + section.tint { border-top: 0; }
 
 /* ---------- Services ---------- */
 .services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3rem); }
-.service { border-top: 1px solid var(--ink-3); padding-top: 1.4rem; display: grid; grid-template-rows: auto 1fr auto auto; gap: .9rem; align-content: start; min-width: 0; }
+.service { border-top: 1px solid var(--ink-3); padding-top: 1.4rem; display: grid; grid-template-rows: auto auto 1fr auto auto; gap: .9rem; align-content: start; min-width: 0; transition: border-color .25s ease; }
+.service:hover, .service:focus-within { border-top-color: var(--accent); }
+.s-icon { display: block; width: 42px; height: 42px; color: var(--ink-3); transition: color .25s ease, transform .25s ease; }
+.s-icon svg { width: 100%; height: 100%; display: block; }
+.service:hover .s-icon, .service:focus-within .s-icon { color: var(--accent); transform: translateY(-3px); }
 .service h2, .service h3 { font-size: 1.6rem; }
 .service p { color: var(--ink-2); }
 .service .price { font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
@@ -308,6 +312,25 @@ section.quotes { padding-block: clamp(2.5rem, 5vw, 4rem); }
 .quote figcaption a:hover { color: var(--accent-2); text-decoration: underline; }
 
 /* ---------- Work ---------- */
+/* ---------- The shelf (Work page) ---------- */
+.shelf { list-style: none; display: flex; flex-wrap: wrap; gap: 3rem 1.5rem; padding: 1rem .75rem 0; margin: 0 -.75rem; }
+.shelf li { position: relative; flex: none; width: calc(20% - 1.2rem); }
+.shelf li::after { content: ""; position: absolute; left: -.75rem; right: -.75rem; top: 260px; height: 2px; background: var(--ink-3); }
+.shelf a { display: grid; grid-template-rows: 260px auto; gap: 1rem; text-decoration: none; color: var(--ink-2); }
+.shelf .cover { position: relative; z-index: 1; align-self: end; justify-self: center; max-height: 260px; max-width: 100%; width: auto; height: auto; display: block; border-radius: 2px; box-shadow: 0 10px 18px -8px rgba(0, 0, 0, .7); transition: transform .3s cubic-bezier(.2, .7, .2, 1), box-shadow .3s ease; }
+.shelf picture.cover img { max-height: 260px; max-width: 100%; width: auto; height: auto; display: block; border-radius: 2px; }
+.shelf .cover-plain { height: 260px; }
+.shelf .cover-plain { width: 100%; display: grid; align-content: end; gap: .4rem; padding: 1rem .9rem; background: linear-gradient(90deg, #3b3934 0, #46433d 9px, #2f2d2a 11px, #34322e 100%); border: 1px solid var(--rule); color: var(--ink); }
+.shelf .cover-plain .t { font-weight: 700; font-size: .95rem; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+.shelf .cover-plain .a { font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.shelf a:hover .cover, .shelf a:focus-visible .cover { transform: translateY(-12px) rotate(-1.5deg); box-shadow: 0 26px 32px -12px rgba(0, 0, 0, .75); }
+.shelf .cap { font-size: .875rem; line-height: 1.35; }
+.shelf .cap strong { display: block; color: var(--ink); font-weight: 600; transition: color .2s ease; }
+.shelf .cap .role { display: block; font-size: .6875rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: .2rem 0 .15rem; }
+.shelf a:hover .cap strong, .shelf a:focus-visible .cap strong { color: var(--accent-2); }
+@media (prefers-reduced-motion: reduce) { .shelf a:hover .cover, .shelf a:focus-visible .cover { transform: none; } }
+@media (max-width: 640px) { .shelf { gap: 2.25rem 1rem; } .shelf li { width: calc(50% - .5rem); } .shelf li::after { left: -.5rem; right: -.5rem; } }
+
 .work { list-style: none; border-top: 1px solid var(--rule); }
 .work li {
   display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: .5rem 2.5rem;
