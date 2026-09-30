@@ -241,7 +241,12 @@ section.tint + section.tint { border-top: 0; }
 .service .price { font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
 .service .price span { color: var(--accent-2); }
 .avail { display: inline-flex; align-items: center; gap: .55rem; font-size: .875rem; font-weight: 500; color: var(--ink); }
-.avail::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(226, 131, 58, .22); flex: none; }
+.avail::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(226, 131, 58, .22); flex: none; animation: avail-pulse 2.4s ease-out infinite; }
+@keyframes avail-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(226, 131, 58, .55); }
+  70% { box-shadow: 0 0 0 8px rgba(226, 131, 58, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(226, 131, 58, 0); }
+}
 .service .body { display: grid; gap: .9rem; align-content: start; }
 .service .avail { margin-top: -.2rem; }
 .services-note { margin-top: 2.5rem; color: var(--ink-2); max-width: var(--measure); }

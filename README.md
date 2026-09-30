@@ -33,6 +33,7 @@ The header, footer, and the "Every book starts with a conversation" band are rep
 - **Change a price or a sentence:** find the text and edit it. Keep the surrounding tags (`<p>`, `</p>`) intact.
 - **Add the *Rideshare* cover:** drop the image into `assets/`, then in `work/index.html`, in the "my own writing" section, add an `<img>` the same way the book cover is done in `book/index.html`.
 - **Swap the testimonial:** edit the text inside `<blockquote>` and the name inside `<figcaption>`. It appears on the home page and the services page.
+- **After editing `assets/styles.css` or `assets/site.js`:** every page loads them as `styles.css?v=15` and `site.js?v=15`. Change the number (to 16, then 17, and so on) in each page's `<head>` so returning visitors get the new file at once; without it, their browsers may keep the old copy for a while. GitHub's file search finds every `?v=` in a few seconds.
 - **Update the sitemap date:** change `<lastmod>` in `sitemap.xml` after a meaningful edit. Optional.
 - **Retire the pre-order button after launch:** on the home page and in `book/index.html`, change "Pre-order the hardcover" to "Buy the hardcover" and point the link wherever the book is sold. The "Out October 22, 2026" labels can become "Out now".
 
