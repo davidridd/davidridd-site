@@ -236,7 +236,7 @@ section.tint + section.tint { border-top: 0; }
 /* ---------- Services ---------- */
 .services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3rem); }
 .service { border-top: 1px solid var(--ink-3); padding-top: 1.4rem; display: grid; grid-template-rows: auto 1fr auto auto; gap: .9rem; align-content: start; min-width: 0; }
-.service h3 { font-size: 1.6rem; }
+.service h2, .service h3 { font-size: 1.6rem; }
 .service p { color: var(--ink-2); }
 .service .price { font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
 .service .price span { color: var(--accent-2); }
@@ -276,7 +276,7 @@ section.tint + section.tint { border-top: 0; }
 /* ---------- FAQ ---------- */
 .faq { display: grid; gap: 0; max-width: 60rem; border-top: 1px solid var(--rule); }
 .faq div { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: .5rem 2.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
-.faq h3 { font-size: 1.15rem; font-weight: 600; }
+.faq h2, .faq h3 { font-size: 1.15rem; font-weight: 600; }
 .faq p { color: var(--ink-2); }
 @media (max-width: 720px) { .faq div { grid-template-columns: 1fr; } }
 
@@ -293,10 +293,11 @@ section.quotes { padding-block: clamp(2.5rem, 5vw, 4rem); }
 .js .carousel-nav[data-count]:not([data-count="1"]) { display: flex; }
 .c-btn { background: none; border: 1px solid var(--rule); color: var(--ink-2); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; line-height: 1; display: grid; place-items: center; transition: border-color .15s ease, color .15s ease; }
 .c-btn:hover { border-color: var(--accent); color: var(--accent-2); }
-.dots { display: flex; gap: .6rem; }
-.dots button { width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0; background: var(--rule); cursor: pointer; transition: background-color .15s ease, transform .15s ease; }
-.dots button[aria-selected="true"] { background: var(--accent); transform: scale(1.2); }
-.dots button:hover { background: var(--ink-3); }
+.dots { display: flex; gap: .1rem; }
+.dots button { width: 24px; height: 24px; border-radius: 50%; border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
+.dots button::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--rule); transition: background-color .15s ease, transform .15s ease; }
+.dots button[aria-selected="true"]::before { background: var(--accent); transform: scale(1.2); }
+.dots button:hover::before { background: var(--ink-3); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 .quote { max-width: 62ch; margin: 0 auto; text-align: center; display: grid; gap: 1rem; justify-items: center; }
 .quote .mark { font-size: 3.5rem; line-height: .45; color: var(--accent); font-weight: 700; }
@@ -313,12 +314,12 @@ section.quotes { padding-block: clamp(2.5rem, 5vw, 4rem); }
   padding: 1.5rem 0; border-bottom: 1px solid var(--rule);
 }
 .work .role { font-size: .8125rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-top: .3rem; }
-.work h3 { font-size: 1.35rem; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
-.work h3 span { font-size: .9375rem; color: var(--ink-2); font-style: normal; font-weight: 400; display: block; margin-top: .3rem; letter-spacing: 0; }
+.work h2 { font-size: 1.35rem; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+.work h2 span { font-size: .9375rem; color: var(--ink-2); font-style: normal; font-weight: 400; display: block; margin-top: .3rem; letter-spacing: 0; }
 .work p { color: var(--ink-2); margin-top: .55rem; max-width: var(--measure); }
-.work h3 a { color: var(--ink); text-decoration: none; }
-.work h3 a::after { content: " \2197"; font-size: .7em; color: var(--accent); font-style: normal; }
-.work h3 a:hover { color: var(--accent-2); text-decoration: underline; }
+.work h2 a { color: var(--ink); text-decoration: none; }
+.work h2 a::after { content: " \2197"; font-size: .7em; color: var(--accent); font-style: normal; }
+.work h2 a:hover { color: var(--accent-2); text-decoration: underline; }
 @media (max-width: 720px) { .work li { grid-template-columns: 1fr; gap: .35rem; } }
 
 /* ---------- Own writing ---------- */

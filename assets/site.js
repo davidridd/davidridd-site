@@ -52,12 +52,13 @@
 
     function show(i) {
       index = (i + slides.length) % slides.length;
+      var height = slides[index].offsetHeight; /* read before any write, so the browser lays out once */
       slides.forEach(function (s, j) {
         s.classList.toggle('is-active', j === index);
         s.setAttribute('aria-hidden', j === index ? 'false' : 'true');
       });
       dotButtons.forEach(function (d, j) { d.setAttribute('aria-selected', j === index ? 'true' : 'false'); });
-      fit();
+      if (track) track.style.height = height + 'px';
       if (userTouched) stop();
     }
     /* Size the track to the quote on screen, so short quotes don't sit in the space of the longest one. */

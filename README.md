@@ -4,14 +4,14 @@ The source for David Ridd's author site, hosted free on GitHub Pages.
 
 There is no build step and nothing to install. The site is plain HTML, CSS, and one small script. Edit a file, commit, and GitHub publishes the change within a minute or two.
 
-Seven pages: Home (`index.html`), The book (`book/`), Services (`services/`), Work (`work/`), About (`about/`), Contact (`contact/`), and the ghostwriting application (`apply/`, linked from the ghostwriting cards and the footer rather than the menu). Each page is its own `index.html` inside its folder, so the addresses are clean: davidridd.com/book/, davidridd.com/services/, and so on.
+Eight pages: Home (`index.html`), The book (`book/`), Services (`services/`), Work (`work/`), About (`about/`), Contact (`contact/`), the ghostwriting application (`apply/`), and Privacy (`privacy/`). The last two are linked from the footer rather than the menu. Each page is its own `index.html` inside its folder, so the addresses are clean: davidridd.com/book/, davidridd.com/services/, and so on.
 
 ## What's here
 
 | File | What it is |
 | --- | --- |
 | `index.html` | The home page. |
-| `book/`, `services/`, `work/`, `about/`, `contact/`, `apply/` | One folder per page, each holding that page's `index.html`. |
+| `book/`, `services/`, `work/`, `about/`, `contact/`, `apply/`, `privacy/` | One folder per page, each holding that page's `index.html`. |
 | `404.html` | The page visitors see if they follow a broken link. |
 | `assets/styles.css` | All the styling. Colors and fonts are set once at the top under `:root`. |
 | `assets/site.js` | Opens and closes the phone menu. That's all it does. |
@@ -26,7 +26,7 @@ Seven pages: Home (`index.html`), The book (`book/`), Services (`services/`), Wo
 
 Open the page's `index.html` on GitHub, click the pencil icon, make the change, and click **Commit changes**.
 
-The header, footer, and the "Every book starts with a conversation" band are repeated in every page's file. A change to any of those (a new menu item, say) has to be made in all seven files.
+The header, footer, and the "Every book starts with a conversation" band are repeated in every page's file. A change to any of those (a new menu item, say) has to be made in all eight files.
 
 - **Update the availability line** ("Now booking · One spot left for 2026"): it appears three times, on the home page, `services/index.html`, and `apply/index.html`. Search for "Now booking" and change all three so they match. When nothing is open, change it to something like "Now booking · Spring 2027" rather than removing it; the line is what makes the application page make sense.
 - **Switch the application to a form:** the "Send your application" button in `apply/index.html` opens an email. If you set up a form (Tally, Google Forms), replace that button's `href` with the form's address and add `target="_blank" rel="noopener"` to it.
@@ -34,6 +34,7 @@ The header, footer, and the "Every book starts with a conversation" band are rep
 - **Add the *Rideshare* cover:** drop the image into `assets/`, then in `work/index.html`, in the "my own writing" section, add an `<img>` the same way the book cover is done in `book/index.html`.
 - **Swap the testimonial:** edit the text inside `<blockquote>` and the name inside `<figcaption>`. It appears on the home page and the services page.
 - **After editing `assets/styles.css` or `assets/site.js`:** every page loads them as `styles.css?v=15` and `site.js?v=15`. Change the number (to 16, then 17, and so on) in each page's `<head>` so returning visitors get the new file at once; without it, their browsers may keep the old copy for a while. GitHub's file search finds every `?v=` in a few seconds.
+- **Privacy page:** it says the site sets no cookies and runs no analytics. That stays true as long as no analytics or embed code is added. If you ever add one (Google Analytics, a YouTube embed, a form service), update `privacy/index.html` the same day.
 - **Update the sitemap date:** change `<lastmod>` in `sitemap.xml` after a meaningful edit. Optional.
 - **Retire the pre-order button after launch:** on the home page and in `book/index.html`, change "Pre-order the hardcover" to "Buy the hardcover" and point the link wherever the book is sold. The "Out October 22, 2026" labels can become "Out now".
 
