@@ -35,7 +35,7 @@
 
   <!-- The typeface is self-hosted: the site makes no third-party requests -->
   <link rel="preload" href="assets/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/styles.css?v=26">
+  <link rel="stylesheet" href="assets/styles.css?v=27">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -102,7 +102,15 @@
           <div class="hero-text">
             <p class="eyebrow">Ghostwriter &middot; Editor &middot; Novel coach</p>
             <h1 id="hero-title">Let&rsquo;s write your story, <span class="hl">together.</span></h1>
-            <p class="lead">I&rsquo;m David Ridd, a writer and editor in Raleigh, North Carolina. I ghostwrite nonfiction for founders, CEOs, athletes, and veterans, edit manuscripts, and coach novelists from the first page through to the finished book. My newest book, <em>In Your Corner</em>, written with MMA coach Javier Mendez, comes out October 22, 2026.</p>
+            <div class="hero-copy">
+              <p class="lead">I&rsquo;m David Ridd, a writer and editor in Raleigh, North Carolina.</p>
+              <ul class="hero-points">
+                <li><span><strong>Ghostwriting</strong> nonfiction for founders, CEOs, athletes, and veterans</span></li>
+                <li><span><strong>Editing</strong> manuscripts, fiction and nonfiction</span></li>
+                <li><span><strong>Coaching</strong> novelists from the first page through to the finished book</span></li>
+              </ul>
+              <p class="lead">My latest book, <a href="book/"><em>In Your Corner</em></a>, written with MMA coach Javier Mendez, releases on October 22, 2026.</p>
+            </div>
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://calendly.com/davidriddwriting" target="_blank" rel="noopener">Book a free 30-minute consult</a>
               <a class="arrow-link" href="https://updates.inyourcornerbook.com/round-1" target="_blank" rel="noopener">Read a sample chapter</a>
@@ -111,7 +119,7 @@
           <figure class="hero-photo">
             <picture>
               <source type="image/webp" srcset="assets/headshot-600.webp 600w, assets/headshot-900.webp 900w, assets/headshot-1200.webp 1200w" sizes="(max-width: 820px) 300px, 420px">
-              <img src="assets/headshot-600.jpg" srcset="assets/headshot-600.jpg 600w, assets/headshot-900.jpg 900w, assets/headshot-1200.jpg 1200w" sizes="(max-width: 820px) 300px, 420px" width="600" height="769" alt="David Ridd, smiling, in a grey henley with a city skyline out of focus behind him" fetchpriority="high">
+              <img src="assets/headshot-600.jpg" srcset="assets/headshot-600.jpg 600w, assets/headshot-900.jpg 900w, assets/headshot-1200.jpg 1200w" sizes="(max-width: 820px) 300px, 420px" width="600" height="770" alt="David Ridd, smiling, in a grey henley with a city skyline out of focus behind him" fetchpriority="high">
             </picture>
             <figcaption>David Ridd &middot; Raleigh, NC</figcaption>
           </figure>
@@ -124,35 +132,37 @@
           <div><dt>5.0</dt><dd>Average rating across 300+ reviews</dd></div>
         </dl>
         <div class="clients-marquee">
-          <p class="clients-label" id="clients-label">Clients and publications</p>
+          <div class="clients-head">
+            <p class="clients-label">Clients and publications</p>
+          </div>
           <div class="marquee">
             <ul class="logos">
-            <li><img src="assets/logos/acer.png" alt="Acer" width="108" height="26" loading="lazy"></li>
-            <li><img src="assets/logos/funko.png" alt="Funko" width="92" height="32" loading="lazy"></li>
-            <li><img src="assets/logos/myheritage.png" alt="MyHeritage" width="156" height="28" loading="lazy"></li>
-            <li><img src="assets/logos/pixl-visn.png" alt="PIXL VISN" width="130" height="34" loading="lazy"></li>
-            <li><img src="assets/logos/literacyplanet.png" alt="LiteracyPlanet" width="97" height="32" loading="lazy"></li>
-            <li><img src="assets/logos/unfold.png" alt="Unfold Learning Design" width="114" height="34" loading="lazy"></li>
-            <li><span class="wordmark">Fortuna Admissions</span></li>
-            <li><img src="assets/logos/entrepreneur.png" alt="Entrepreneur" width="132" height="26" loading="lazy"></li>
-            <li><img src="assets/logos/ebn.png" alt="Employee Benefit News" width="70" height="30" loading="lazy"></li>
-            <li><img src="assets/logos/daddilife.png" alt="DaddiLife" width="131" height="26" loading="lazy"></li>
-            <li><img src="assets/logos/til-valhalla.png" alt="Til Valhalla Project" width="134" height="34" loading="lazy"></li>
-            <li><img src="assets/logos/cpai.png" alt="Center for Practical AI" width="123" height="34" loading="lazy"></li>
+            <li><img src="assets/logos/acer.png" alt="Acer" width="108" height="26" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/funko.png" alt="Funko" width="92" height="32" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/myheritage.png" alt="MyHeritage" width="156" height="28" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/pixl-visn.png" alt="PIXL VISN" width="130" height="34" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/literacyplanet.png" alt="LiteracyPlanet" width="97" height="32" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/unfold.png" alt="Unfold Learning Design" width="114" height="34" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/fortuna.png" alt="Fortuna Admissions" width="110" height="30" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/entrepreneur.png" alt="Entrepreneur" width="132" height="26" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/ebn.png" alt="Employee Benefit News" width="70" height="30" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/daddilife.png" alt="DaddiLife" width="131" height="26" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/til-valhalla.png" alt="Til Valhalla Project" width="134" height="34" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/cpai.png" alt="Center for Practical AI" width="123" height="34" decoding="async" fetchpriority="low"></li>
             </ul>
             <ul class="logos" aria-hidden="true">
-            <li><img src="assets/logos/acer.png" alt="Acer" width="108" height="26" loading="lazy"></li>
-            <li><img src="assets/logos/funko.png" alt="Funko" width="92" height="32" loading="lazy"></li>
-            <li><img src="assets/logos/myheritage.png" alt="MyHeritage" width="156" height="28" loading="lazy"></li>
-            <li><img src="assets/logos/pixl-visn.png" alt="PIXL VISN" width="130" height="34" loading="lazy"></li>
-            <li><img src="assets/logos/literacyplanet.png" alt="LiteracyPlanet" width="97" height="32" loading="lazy"></li>
-            <li><img src="assets/logos/unfold.png" alt="Unfold Learning Design" width="114" height="34" loading="lazy"></li>
-            <li><span class="wordmark">Fortuna Admissions</span></li>
-            <li><img src="assets/logos/entrepreneur.png" alt="Entrepreneur" width="132" height="26" loading="lazy"></li>
-            <li><img src="assets/logos/ebn.png" alt="Employee Benefit News" width="70" height="30" loading="lazy"></li>
-            <li><img src="assets/logos/daddilife.png" alt="DaddiLife" width="131" height="26" loading="lazy"></li>
-            <li><img src="assets/logos/til-valhalla.png" alt="Til Valhalla Project" width="134" height="34" loading="lazy"></li>
-            <li><img src="assets/logos/cpai.png" alt="Center for Practical AI" width="123" height="34" loading="lazy"></li>
+            <li><img src="assets/logos/acer.png" alt="Acer" width="108" height="26" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/funko.png" alt="Funko" width="92" height="32" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/myheritage.png" alt="MyHeritage" width="156" height="28" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/pixl-visn.png" alt="PIXL VISN" width="130" height="34" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/literacyplanet.png" alt="LiteracyPlanet" width="97" height="32" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/unfold.png" alt="Unfold Learning Design" width="114" height="34" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/fortuna.png" alt="Fortuna Admissions" width="110" height="30" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/entrepreneur.png" alt="Entrepreneur" width="132" height="26" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/ebn.png" alt="Employee Benefit News" width="70" height="30" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/daddilife.png" alt="DaddiLife" width="131" height="26" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/til-valhalla.png" alt="Til Valhalla Project" width="134" height="34" decoding="async" fetchpriority="low"></li>
+            <li><img src="assets/logos/cpai.png" alt="Center for Practical AI" width="123" height="34" decoding="async" fetchpriority="low"></li>
             </ul>
           </div>
         </div>
@@ -252,7 +262,7 @@
             </figure>
             <figure class="quote">
               <span class="mark" aria-hidden="true">&ldquo;</span>
-              <blockquote>David was the perfect editor for my novel. I spent time searching for someone that I knew would do more than just proofread. David took my project to the next level. He came alongside me and took the time to understand my vision. David challenged me to give depth to my characters. He helped me push through when I felt stuck or was experiencing writer&rsquo;s block. He encouraged me and provided me with the necessary framework to write the novel I&rsquo;ve always dreamt of. I&rsquo;d work with him time and time over again.</blockquote>
+              <blockquote>David was the perfect editor for my novel. I spent time searching for someone that I knew would do more than just proofread. He came alongside me and took the time to understand my vision. David challenged me to give depth to my characters. He encouraged me and provided me with the necessary framework to write the novel I&rsquo;ve always dreamt of. I&rsquo;d work with him time and time over again.</blockquote>
               <figcaption>Molly Morgen &middot; author of <em>The Beautiful Ordinary</em></figcaption>
             </figure>
             <figure class="quote">
@@ -262,7 +272,7 @@
             </figure>
             <figure class="quote">
               <span class="mark" aria-hidden="true">&ldquo;</span>
-              <blockquote>David proved to be an incredibly important part of the creation of my book. My content was clear, but David really elevated the readability and conciseness of the words on the page. As a writer, I have found it incredibly important to have a critical but constructive voice to challenge me as I have gone from the initial draft to the final copy. David is very much this person and, with years of experience, is able to take something ordinary and make it incredibly special. If anyone is looking for a talented writer who can think outside of the box, David is the person I would recommend time and time again. As I continue to write, I will certainly be using David&rsquo;s services in the future.</blockquote>
+              <blockquote>My content was clear, but David really elevated the readability and conciseness of the words on the page. As a writer, I have found it incredibly important to have a critical but constructive voice to challenge me as I have gone from the initial draft to the final copy. David is very much this person and, with years of experience, is able to take something ordinary and make it incredibly special.</blockquote>
               <figcaption>Ben Hodgson &middot; author of <a href="https://www.amazon.com/Absent-Present-Everything-Unpleasant-Healing-ebook/dp/B0CW1B7PC3" target="_blank" rel="noopener"><em>Absent, Present, and Everything Unpleasant</em></a></figcaption>
             </figure>
           </div>
@@ -307,6 +317,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=26" defer></script>
+  <script src="assets/site.js?v=27" defer></script>
 </body>
 </html>

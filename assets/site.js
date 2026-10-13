@@ -1,4 +1,5 @@
-/* davidridd.com: the only script on the site. It runs the phone menu and the testimonial carousel. */
+/* davidridd.com: the only script on the site. It runs the phone menu, the testimonial carousel,
+   and the pause button on the client logo strip. */
 (function () {
   document.documentElement.classList.remove('no-js');
   document.documentElement.classList.add('js');
@@ -67,12 +68,20 @@
     }
     window.addEventListener('resize', fit);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    /* Each quote stays up long enough to read: about 210 words a minute plus a beat, never under 9 seconds. */
+    function dwell(i) {
+      var words = (slides[i].querySelector('blockquote') || slides[i]).textContent.trim().split(/\s+/).length;
+      return Math.max(9000, Math.round(words / 3.5) * 1000 + 3000);
+    }
+    function schedule() {
+      stop();
+      timer = window.setTimeout(function () { show(index + 1); schedule(); }, dwell(index));
+    }
     function start() {
       if (reduceMotion || slides.length < 2 || userTouched) return;
-      stop();
-      timer = window.setInterval(function () { show(index + 1); }, 9000);
+      schedule();
     }
-    function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+    function stop() { if (timer) { window.clearTimeout(timer); timer = null; } }
 
     if (prev) prev.addEventListener('click', function () { userTouched = true; show(index - 1); });
     if (next) next.addEventListener('click', function () { userTouched = true; show(index + 1); });
@@ -88,4 +97,29 @@
     show(0);
     start();
   });
+
+  /* ---- Client logo strip: a pause button (it also pauses while the pointer is over it) ---- */
+  var strip = document.querySelector('.clients-marquee');
+  var marquee = strip && strip.querySelector('.marquee');
+  var head = strip && strip.querySelector('.clients-head');
+  if (marquee && head && !reduceMotion) {
+    var btn = document.createElement('button');
+    var word = document.createElement('span');
+    var more = document.createElement('span');
+    var paused = false;
+    btn.type = 'button';
+    btn.className = 'marquee-toggle';
+    more.className = 'visually-hidden';
+    more.textContent = ' client logos';
+    btn.appendChild(word);
+    btn.appendChild(more);
+    var render = function () {
+      word.textContent = paused ? 'Play' : 'Pause';
+      btn.classList.toggle('is-paused', paused);
+      marquee.classList.toggle('is-paused', paused);
+    };
+    btn.addEventListener('click', function () { paused = !paused; render(); });
+    render();
+    head.appendChild(btn);
+  }
 })();
